@@ -1,5 +1,5 @@
 from rest_framework import permissions
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView
 
 from .models import Article
 from .serializers import ArticleSerializer
@@ -10,11 +10,7 @@ class ArticleListview(ListCreateAPIView):
     serializer_class = ArticleSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-class ArticleDetailView(RetrieveAPIView):
+class ArticleDetailView(RetrieveDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
 
-# class ArticleCreateView(CreateAPIView):
-#     queryset = Article.objects.all()
-#     serializer_class = ArticleSerializer
-#     permission_classes = [permissions.IsAuthenticated]
