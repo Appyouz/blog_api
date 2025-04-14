@@ -49,32 +49,32 @@
     * [x] Saved the token and noted it down.
 
 6.  **[ ] Programmatically Generating Tokens (For Later):**
-    * [ ] Set up API endpoints for user registration and/or login to automatically generate and return authentication tokens.
+    * [x] Set up API endpoints for user registration and/or login to automatically generate and return authentication tokens.
 
 **Phase 2: Implement the "Return a list of articles" Endpoint**
 
 7.  **[ ] Create a Serializer for the Article Model:**
-    * [ ] Create a new file named `serializers.py` in your 'blog' app.
-    * [ ] In `serializers.py`, create a Django REST Framework serializer for your `Article` model.
+    * [x] Create a new file named `serializers.py` in your 'blog' app.
+    * [x] In `serializers.py`, create a Django REST Framework serializer for your `Article` model.
 
 8.  **[ ] Create a View for Listing Articles:**
-    * [ ] Open the `views.py` file in your 'blog' app.
-    * [ ] Import the necessary modules from Django REST Framework and your `models` and `serializers`.
-    * [ ] Create a view (likely using a `ListAPIView` or a function-based view with `@api_view`) that:
+    * [x] Open the `views.py` file in your 'blog' app.
+    * [x] Import the necessary modules from Django REST Framework and your `models` and `serializers`.
+    * [x] Create a view (likely using a `ListAPIView` or a function-based view with `@api_view`) that:
         * Retrieves all `Article` objects from the database.
         * Serializes the `Article` objects using your `ArticleSerializer`.
         * Returns the serialized data in the response.
 
 9.  **[ ] Define the URL for Listing Articles:**
-    * [ ] Create a new file named `urls.py` in your 'blog' app.
-    * [ ] Import `path` from `django.urls` and your view.
-    * [ ] Define a URL pattern (e.g., `/api/articles/`) that maps to your list articles view.
-    * [ ] Include your app's `urls.py` in your project's main `urls.py` file.
+    * [x] Create a new file named `urls.py` in your 'blog' app.
+    * [x] Import `path` from `django.urls` and your view.
+    * [x] Define a URL pattern (e.g., `/api/articles/`) that maps to your list articles view.
+    * [x] Include your app's `urls.py` in your project's main `urls.py` file.
 
 **Phase 3: Implement the "Return a single article" Endpoint**
 
 10. **[ ] Create a View for Retrieving a Single Article:**
-    * [ ] In `views.py`, create a view (likely using a `RetrieveAPIView` or a function-based view) that:
+    * [x] In `views.py`, create a view (likely using a `RetrieveAPIView` or a function-based view) that:
         * Accepts an `id` as a parameter.
         * Retrieves the `Article` object with the matching ID from the database.
         * Handles the case where the article doesn't exist (return a 404 error).
@@ -82,12 +82,12 @@
         * Returns the serialized data.
 
 11. **[ ] Define the URL for Retrieving a Single Article:**
-    * [ ] In `urls.py`, define a URL pattern (e.g., `/api/articles/<int:pk>/`) that maps to your single article view, capturing the article ID.
+    * [x] In `urls.py`, define a URL pattern (e.g., `/api/articles/<int:pk>/`) that maps to your single article view, capturing the article ID.
 
 **Phase 4: Implement the "Create a new article" Endpoint**
 
 12. **[ ] Create a View for Creating a New Article:**
-    * [ ] In `views.py`, create a view (likely using a `CreateAPIView` or a function-based view with `@api_view(['POST'])`) that:
+    * [x] In `views.py`, create a view (likely using a `CreateAPIView` or a function-based view with `@api_view(['POST'])`) that:
         * **Apply Authentication:** Add the `permission_classes = [permissions.IsAuthenticated]` attribute to your view to ensure only authenticated users can access it. Import `rest_framework.permissions` as `permissions`.
         * Accepts data in the request body.
         * Deserializes the data using your `ArticleSerializer`.
